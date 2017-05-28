@@ -1,0 +1,54 @@
+{
+  "name": "express-eh",
+  "version": "0.5.0",
+  "description": "Just great error handler for Express.JS apps",
+  "main": "dist/index.js",
+  "scripts": {
+    "ava": "ava -vs test/*.test.js",
+    "test": "npm run ava"
+  },
+  "dependencies": {
+    "debug": "2.6.4",
+    "express": "4.15.3"
+  },
+  "devDependencies": {
+    "ava": "0.19.1",
+    "babel-cli": "6.22.2",
+    "babel-plugin-transform-runtime": "6.23.0",
+    "babel-preset-es2015": "6.22.0",
+    "babel-preset-stage-0": "6.24.1",
+    "babel-register": "6.22.0",
+    "body-parser": "1.17.1",
+    "nyc": "10.2.0",
+    "require-subvert": "0.1.0",
+    "sinon": "2.1.0",
+    "supertest": "3.0.0"
+  },
+  "ava": {
+    "require": "babel-register",
+    "babel": {
+      "presets": [
+        "es2015",
+        "stage-0"
+      ],
+      "plugins": [
+        "transform-runtime"
+      ]
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kozzztya/express-error-handler.git"
+  },
+  "keywords": [
+    "express",
+    "error",
+    "handler"
+  ],
+  "author": "kozzztya",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kozzztya/express-error-handler/issues"
+  },
+  "homepage": "https://github.com/kozzztya/express-error-handler#readme"
+}
