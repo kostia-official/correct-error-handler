@@ -1,6 +1,6 @@
 {
   "name": "correct-error-handler",
-  "version": "0.5.0",
+  "version": "0.5.2",
   "description": "Just correct error handler for Express.JS apps",
   "main": "dist/index.js",
   "scripts": {
@@ -8,11 +8,11 @@
     "test": "npm run ava"
   },
   "dependencies": {
-    "debug": "2.6.4",
-    "express": "4.15.3"
+    "debug": "2.6.4"
   },
   "devDependencies": {
     "ava": "0.19.1",
+    "express": "4.15.3",
     "babel-cli": "6.22.2",
     "babel-plugin-transform-runtime": "6.23.0",
     "babel-preset-es2015": "6.22.0",
