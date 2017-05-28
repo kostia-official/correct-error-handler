@@ -1,5 +1,6 @@
 const debugSpy = require('./doubles/debug-spy');
-const errorHandler = require('../src');
+const errorHandler = require('../src/basic');
+const rollbar = require('../src/rollbar');
 const Supertest = require('supertest');
 const test = require('ava');
 const express = require('express');
@@ -23,7 +24,8 @@ app.get('/error/status', () => {
   error.status = statusCode;
   throw error;
 });
-app.use(errorHandler);
+
+app.use(errorHandler());
 
 test('internal server error', async (t) => {
   const { error } = await supertest.get('/error/internal');

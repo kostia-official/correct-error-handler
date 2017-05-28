@@ -1,14 +1,9 @@
-var debug = require('debug')('error-handler');
+const basic = require('./basic');
+const rollbar = require('./rollbar');
 
-module.exports = function (err, req, res, next) {
-  var status = err.status || err.code;
+module.exports = function (app) {
+  app = app || this;
 
-  if (!isHttpStatus(status)) status = 500;
-  if (status >= 500) debug({ error: err });
-
-  return res.status(status).send(err.message);
+  if (process.env.ROLLBAR_TOKEN) app.use(rollbar());
+  app.use(basic());
 };
-
-function isHttpStatus(status) {
-  return status >= 200 && status < 512;
-}
