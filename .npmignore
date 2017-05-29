@@ -30,5 +30,4 @@ node_modules
 lib/
 
 .idea
-src
 test
