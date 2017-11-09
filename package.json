@@ -1,6 +1,6 @@
 {
   "name": "correct-error-handler",
-  "version": "0.5.3",
+  "version": "0.5.4",
   "description": "Just correct error handler for Express.JS apps",
   "main": "src/index.js",
   "scripts": {
