@@ -30,18 +30,18 @@ app.use(errorHandler());
 test('internal server error', async (t) => {
   const { error } = await supertest.get('/error/internal');
   t.is(error.status, 500);
-  t.is(error.text, errorMessage);
+  t.is(error.text.replace("\"", "").replace("\"", ""), errorMessage);
   t.truthy(debugSpy.called);
 });
 
 test('internal with code', async (t) => {
   const { error } = await supertest.get('/error/status');
   t.is(error.status, statusCode);
-  t.is(error.text, errorMessage);
+  t.is(error.text.replace("\"", "").replace("\"", ""), errorMessage);
 });
 
 test('internal with status', async (t) => {
   const { error } = await supertest.get('/error/code');
   t.is(error.status, statusCode);
-  t.is(error.text, errorMessage);
+  t.is(error.text.replace("\"", "").replace("\"", ""), errorMessage);
 });

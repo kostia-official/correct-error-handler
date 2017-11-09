@@ -6,7 +6,7 @@ function handler(err, req, res, next) {
   if (!isHttpStatus(status)) status = 500;
   if (status >= 500) debug({ error: err });
 
-  return res.status(status).send(err.message);
+  return res.status(status).json(err.message);
 }
 
 function isHttpStatus(status) {
